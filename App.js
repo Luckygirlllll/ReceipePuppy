@@ -21,8 +21,8 @@ import axios from 'axios';
 
 export default class App extends React.Component {
   state = {
-    receipe: '',
-    data: null,
+    receipe: '', //receipe which user types
+    data: null, //data from the server
   };
 
   async setStateAsync(newState) {
@@ -52,6 +52,7 @@ export default class App extends React.Component {
         dataSecond.data != null &&
         dataSecond.data.results != null
       ) {
+        // display first 20 results
         const combinedData = data.data.results.concat(dataSecond.data.results);
         this.setState({data: combinedData});
       }
